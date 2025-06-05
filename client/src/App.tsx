@@ -11,20 +11,20 @@ function App() {
   const [title, setTitle] = useState("");
 
   const fetchTodos = async () => {
-    const res = await axios.get("http://localhost:5000/todos");
+    const res = await axios.get(`http://localhost:5000/todos`);
     setTodos(res.data);
   };
 
-  cost addTodo = async () => {
+  const addTodo = async () => {
     if (!title.trim()) return;
     const newTodo = { id: Date.now(), title };
-    await axios.post("https://localhost:5000/todos", newTodo);
+    await axios.post(`http://localhost:5000/todos`, newTodo);
     setTitle("");
     fetchTodos();
   };
 
   const deleteTodo = async (id: number) => {
-    await axios.delete('http://localhost:5000/todos/${id}');
+    await axios.delete(`http://localhost:5000/todos/${id}`);
     fetchTodos();
   };
 
@@ -45,6 +45,7 @@ function App() {
       </div>
       <ul style={{ listStyle: "none", padding: 0 }}>
 	{todos.map((todo) => (
+	  <li key={todo.id}>
 	  {todo.title}
 	  <button
 	    onClick={() => deleteTodo(todo.id)}
@@ -55,14 +56,8 @@ function App() {
 	</li>
       ))}
     </ul>
-  </div>
-  );
+  </>
+ );
 }
 
 export default App;
-      </p>
-    </>
-  )
-}
-
-export default App
