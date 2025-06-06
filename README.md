@@ -7,4 +7,4 @@ Styled with Nord-inspired dark UI.
 
 What do you think?
 
-![Screenshot](https://github.com/josias-qr25/tiny-todo/tree/main/client/public/screenshots/tiny-todo.png?raw=true)
+![Screenshot](https://github.com/josias-qr25/tiny-todo/blob/main/client/public/tiny-todo.png)
