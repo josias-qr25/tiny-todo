@@ -19,15 +19,6 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
->The terminal that says (venv) is for running the server. 
-
->Open another terminal when it's time to run the frontend. 
-
->You can always activate the virtual environment (venv) later with this command:
-```bash
-cd server
-source venv/bin/activate
-```
 
 **Set up the frontend (web app).**
 ```bash
