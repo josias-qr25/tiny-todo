@@ -10,6 +10,8 @@ interface Todo {
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [title, setTitle] = useState("");
+  
+  const [hackerMode, setHackerMode] = useState(false);
 
   const fetchTodos = async () => {
     const res = await axios.get(`http://localhost:5000/todos`);
@@ -177,6 +179,27 @@ return (
         ))}
       </ul>
     </div>
+   <button
+     onClick={() => setHackerMode(!hackerMode)}
+     style={{
+	position: "absolute",
+	top: "1rem",
+	right: "1rem",
+	padding: "0.4rem 0.8rem",
+	fontSize: "0.8rem",
+	borderRadius: "0.5rem",
+	backgroundColor: hackerMode ? "#3b4252" : "#1f2329",
+	color: hackerMode ? "#eceff4" : "#a6e3a1",
+	border: "none",
+	cursor: "pointer",
+	zIndex: 1000,
+	fontFamily: "monospace",
+	boxShadow: "0 0 5px rgba(0,0,0,0.3)",
+	transition: "all 0.3s ease"
+      }}
+    >
+      {hackerMode ? "Nord Mode" : "Hacker Mode"}
+    </button>
   </div>
 );
 }
